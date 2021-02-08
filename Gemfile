@@ -66,3 +66,6 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 # devise
 gem 'devise', '~> 4.2'
+
+# manage sort order
+gem 'acts_as_list', '~> 0.9.19'
