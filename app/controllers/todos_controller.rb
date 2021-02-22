@@ -58,6 +58,6 @@ before_action :set_todo, only: [:show, :edit, :update, :destroy, :sort]
     end
 
     def todo_params
-      params.require(:todo).permit(:content, :goal_id, :position, :done)
+      params.require(:todo).permit(:content, :goal_id, :position, :done, tag_id: [])
     end
 end
