@@ -4,7 +4,8 @@ class GoalsController < ApplicationController
 
   # GET /goals
   def index
-    @goals = current_user.goals.all
+    #@goals = current_user.goals.all
+   @goals = Goal.where(status: :public).order(created_at: :desc)
   end
 
   # GET /goals/new
@@ -50,6 +51,6 @@ class GoalsController < ApplicationController
 
     
     def goal_params
-      params.require(:goal).permit(:title, :user_id)
+      params.require(:goal).permit(:title, :user_id, :status)
     end
 end
