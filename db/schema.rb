@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_15_085430) do
+ActiveRecord::Schema.define(version: 2021_03_01_104720) do
 
   create_table "goals", force: :cascade do |t|
     t.string "title"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status"
     t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_02_15_085430) do
     t.boolean "done", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 1, null: false
     t.index ["goal_id"], name: "index_todos_on_goal_id"
   end
 

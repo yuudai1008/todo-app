@@ -23,6 +23,14 @@
             <%= form.label :title %>
             <%= form.text_field :title %>
           </div>
+          <%= form.label(:public, for: nil, class:'post-status__label') do %>
+      <%= form.radio_button :status, :public %>
+      公開
+  <% end %>
+  <%= form.label(:private, for: nil, class:'post-status__label') do %>
+      <%= form.radio_button :status, :private %>
+      非公開
+  <% end %>
         </div>
         <div class="modal-footer actions">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
