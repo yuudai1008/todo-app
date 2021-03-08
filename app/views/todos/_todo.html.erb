@@ -6,6 +6,7 @@
     <div class="card-text pr-4">
       <%= todo.done ? tag.del(){simple_format todo.content} : (simple_format todo.content) %>
     </div>
+    <% if user_signed_in? && current_user.id == todo.goal.user_id %>
     <div class="btn-group position-absolute" style="top: 10px; right: 4px">
       <button type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-ellipsis-v"></i>
@@ -30,6 +31,7 @@
             remote: true, data: { confirm: 'Are you sure?' } %>
       </div>
     </div>
+    <% end %>
     <div class="card-text">
       <small class="text-muted">
         <%= todo.created_at.strftime('%Y/%m/%d') %>

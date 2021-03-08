@@ -5,7 +5,7 @@ class GoalsController < ApplicationController
   # GET /goals
   def index
     #@goals = current_user.goals.all
-   @goals = Goal.where(status: :public).order(created_at: :desc)
+   @goals = Goal.where(status: :public).or(current_user.goals.all).order(created_at: :desc)
   end
 
   # GET /goals/new

@@ -28,7 +28,7 @@
       公開
   <% end %>
   <%= form.label(:private, for: nil, class:'post-status__label') do %>
-      <%= form.radio_button :status, :private %>
+      <%= form.radio_button :status, :private, checked: true %>
       非公開
   <% end %>
         </div>
